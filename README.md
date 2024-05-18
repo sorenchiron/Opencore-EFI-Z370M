@@ -1,7 +1,7 @@
 # Opencore-EFI-Z370M
 `Opencore-0.9.9` EFI for Hackintosh `13-Ventura` install/boot.
 
-# Hardware Specification
+# 硬件 Hardware Specification
 
 The total worth of this hackintosh is ￥2876 ($398 USD)
 
@@ -11,7 +11,8 @@ The total worth of this hackintosh is ￥2876 ($398 USD)
 | CPU | Intel 8600K | OEM USED |
 | iGPU | Intel UHD 630 | Integrated |
 | GPU | AMD RX 5700XT Sapphire Nitro+ | 超白金OC USED |
-| SSD | WD SN550 HBM 1T | for MacOS |
+| RAM | 丁凌存储 3200MHz DDR4 32G | 海力士Hynix颗粒 |
+| SSD | WD SN550 HBM 1T | Old controller |
 | SSD | GUDGA 128G | for Win11 USED |
 | 电源 Power | 玄武550 | Rated 600W |
 | 网卡 NetAdapter | BCM94360CD | USED |
@@ -34,7 +35,7 @@ Chinese and English introductions are provided below:
 
 ### 目前的体验
 - [x] Apple ID 登录正常
-- [x] iCloud 全部服务正常
+- [x] iCloud 全部服务正常，AppStore正常。
 - [x] AriDrop 正常
 - [x] 西部数据SSD完全正常
 - [x] 锁屏解锁体验正常
@@ -42,11 +43,13 @@ Chinese and English introductions are provided below:
 - [x] 网页正常，看视频正常
 - [x] 蓝牙连音响、连键盘正常
 - [x] 蓝牙/有线，连妙控板2正常
-- [x] 速度完爆一切macbook pro，同时开20个sketch大文件画图，完全流畅毫无卡顿。
-- 自购SSD太划算了，1TB才三百来块，反观Apple，无语。
 - [x] 锁屏熄屏正常。主机不睡眠，锁屏后自动休停屏幕，体验正常。
-- [ ] 深度睡眠hibernate不正常，已禁止深度睡眠。
-- [ ] Darkwake 浅睡唤醒不正常，已禁止任何睡眠，之后一切正常。
+- [x] 速度完爆一切macbook pro，同时开20个sketch大文件画图，完全流畅毫无卡顿。
+- [x] 自购SSD太划算了，Nvme 1TB才三百来块，速度快的飞起，反观Apple，无语。
+- [ ] Chrome浏览器一切正常，必须关闭其硬件加速。
+- [ ] Safari浏览器不正常，反正我用Chrome，无所谓。
+- [ ] 深度睡眠hibernate不正常，已禁止任何睡眠，之后一切正常。
+- [ ] 浅睡唤醒Darkwake不正常，已禁止任何睡眠，之后一切正常。
 
 ### 详细说明
 - 关于BIOS
@@ -55,12 +58,15 @@ Chinese and English introductions are provided below:
     - 关闭快速启动
     - 关闭安全启动
     - 关闭串口
+    - 关闭网络唤醒等各类唤醒
     - 启动类型=其他操作系统
     - 关闭 Resizable Bar
     - 开启大于4G寻址
     - 北桥-开启核显
+    - 北桥-核显分配内存=1024MB
     - 北桥-首选显卡=自动
-    - 关闭网络唤醒等各类唤醒
+    - 开启内存XMP
+    - 其他更细致的设定，请遵循[Opencore](https://dortania.github.io/OpenCore-Install-Guide/config.plist/coffee-lake.html#starting-point)针对Coffeelake-CPU的建议
 - 关于USB安装盘
     - 使用了USB3盘，镜像加载速度明显提升。
     - 从mac上下载了Ventura的安装dmg，大小12GB，在mac下使用命令制作了完整系统的安装U盘
