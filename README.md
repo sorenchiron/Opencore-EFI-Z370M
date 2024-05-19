@@ -1,5 +1,6 @@
 # Opencore-EFI-Z370M
 `Opencore-0.9.9` EFI for Hackintosh `13-Ventura` install/boot.
+华硕 Asus Z370M Plus II 主板
 
 # 主板接口图 Motherboard plugs graph
 ![华硕z370m主板接口图](imgs/z370m-plus-ii-plugs.jpg)
