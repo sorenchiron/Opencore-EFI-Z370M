@@ -78,7 +78,7 @@ Chinese and English introductions are provided below:
     - 如果你插的主板口不是我提到的`U31G1_34`和`USB1314`，则应该自行下载 `USBToolBox` 的程序工具，重新映射端口，并生成你自己的 `UTBMap.kext`，替换本仓库EFI中的 `UTBMap.kext`。
 
 ### 关于AMD 5700XT显卡的特别说明
-- AMD RX 5000全系和部分6000系列显卡被报告有大量原厂故障缺陷 ![1](https://forums.tomshardware.com/threads/rx-5700xt-green-screen-bad-gpu.3533926/) ![2](https://community.amd.com/t5/drivers-software/rx-5700xt-green-screen-crashes/td-p/142073) ![3](https://community.amd.com/t5/drivers-software/rx-5700xt-green-screen-crashes/td-p/142073) ![4](https://forums.tomshardware.com/threads/5700xt-green-screen-crash.3669085/) ![5](https://www.bilibili.com/read/cv15226963/) ![6](https://tieba.baidu.com/p/7208773691) ![7](https://www.rednn.com/digital/202004/19383.html) ![8](https://blog.csdn.net/RellyChodorow/article/details/133490387) ![9](https://tieba.baidu.com/p/8641758085)
+- AMD RX 5000全系和部分6000系列显卡被报告有大量原厂故障缺陷 [1](https://forums.tomshardware.com/threads/rx-5700xt-green-screen-bad-gpu.3533926/) [2](https://community.amd.com/t5/drivers-software/rx-5700xt-green-screen-crashes/td-p/142073) [3](https://community.amd.com/t5/drivers-software/rx-5700xt-green-screen-crashes/td-p/142073) [4](https://forums.tomshardware.com/threads/5700xt-green-screen-crash.3669085/) [5](https://www.bilibili.com/read/cv15226963/) [6](https://tieba.baidu.com/p/7208773691) [7](https://www.rednn.com/digital/202004/19383.html) [8](https://blog.csdn.net/RellyChodorow/article/details/133490387) [9](https://tieba.baidu.com/p/8641758085)
 - RX5000 系列显卡经常有绿屏死机、开浏览器卡死/绿屏死机的问题
 - AMD显卡绿屏死机问题在全新白苹果/黑苹果/Win11/Win10/Win7下都有大量发生。
 - AMD绿屏的原因：
