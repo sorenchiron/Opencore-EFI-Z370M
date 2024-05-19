@@ -32,7 +32,7 @@ The total worth of this hackintosh is ￥2876 ($398 USD)
 Chinese and English introductions are provided below:
 
 # 中文文档 Readme
-### 如果有5700xt独显：
+### 如果有dGPU 5700xt独显：
 - 安装U盘中，可以使用`EFI-installer`，其中已经匹配好了华硕Z370M-Plus-II主板的USB端口。
     - USB3 gen1 使用了主板上的`U31G1_34`，另一个空置未使用。 
     - 机箱USB口接的`USB1314`
@@ -40,12 +40,12 @@ Chinese and English introductions are provided below:
 - 安装好后，可以使用`EFI-hless-r24-ag5500xt-ss5700-RTC-acpi-wake` 替代系统EFI，实测48小时工作无故障。
 - 请删除EFI文件夹的后缀名，只保留`EFI`，本仓库的后缀只为方便标注辨别。
 
-### 如果没有GPU，仅有CPU核显UHD630
+### 如果没有dGPU，仅有CPU iGPU核显UHD630
 - 安装好后，可以使用`EFI-UHD-working`代替系统EFI，注意文件夹应重命名为`EFI`再使用。
 - 实测24小时工作无故障。
 - UHD630可以带动4k屏，如果想要4K60FPS，需要主板的HDMI/DP接口支持。主要瓶颈是主板接口规格。
 
-### 目前的体验
+### 目前的体验 Current performance
 - [x] Apple ID 登录正常
 - [x] iCloud 全部服务正常，AppStore正常。
 - [x] AriDrop 正常
@@ -62,7 +62,7 @@ Chinese and English introductions are provided below:
 - [ ] 深度睡眠hibernate不正常，已禁止任何睡眠，之后一切正常。
 - [ ] 浅睡唤醒Darkwake不正常，已禁止任何睡眠，之后一切正常。
 
-### 详细说明
+### 详细说明 Details
 - 关于BIOS
     - 关闭vt-d
     - 关闭usb s5唤醒
@@ -122,39 +122,39 @@ Chinese and English introductions are provided below:
 | Key | Value | Details |
 | --- | --- | --- |
 | Booter->Quirks |  |  |
-| DevirtualiseMmio | False | 解决AsusZ370m[卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
-| EnableWriteUnprotector | True | 解决AsusZ370m[卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
-| ProtectUefiServices | False | Z370 不需要  |
-| SetupVirtualMap | True | 解决AsusZ370m[卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
-| SyncRuntimePermissions False | 解决AsusZ370m[卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
+| DevirtualiseMmio | False | 解决AsusZ370m[卡EB-stall黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
+| EnableWriteUnprotector | True | 解决AsusZ370m[卡EB-stall黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
+| ProtectUefiServices | False | Z370:false 不需要  |
+| SetupVirtualMap | True | 解决AsusZ370m[卡EB-stall黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
+| SyncRuntimePermissions | False | 解决AsusZ370m[卡EB-stall黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
 | DeviceProperties->Add |  |  |
 | PciRoot(0x0)/Pci(0x14,0x0) | acpi-wake-type=01 | 辅助睡眠秒醒，无效 |
 | PciRoot(0x0)/Pci(0x1b,0x0) | layout-id=01000000 | [I219V](https://www.asus.com.cn/motherboards-components/motherboards/prime/prime-z370m-plus-ii/techspec/)支持layout-1 |
 | PciRoot(0x0)/Pci(0x2,0x0) | AAPL,ig-platform-id=0300913E | iGPU仅计算 |
 | Kernel->Quirks |  |  |
-| AppleCpuPmCfgLock | True | 解决AsusZ370m[卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
-| AppleXcpmCfgLock | True | 解决AsusZ370m[卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
-| DisableIoMapper | True | 确保vt-d不影响 |
+| AppleCpuPmCfgLock | True | 解决AsusZ370m[卡EB-stall黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
+| AppleXcpmCfgLock | True | 解决AsusZ370m[卡EB-stall黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
+| DisableIoMapper | True | 确保vt-d不影响, just in case. |
 | DisableRtcChecksum | True | 辅助开机safe mode问题 有效 |
-| XhciPortLimit | True | 解决引导中途停止问题 |
+| XhciPortLimit | True | 解决引导中途停止问题 solves booting stalls |
 | NVRAM->7C436110-AB2A-4BBB-A880-FE41995C9F82 |  |  |
 | boot-args | -v | 详细log |
 | boot-args | keepsyms=1 | 详细log |
 | boot-args | debug=0x100 | 详细log |
 | boot-args | agdpmod=pikera | 5700XT必须，否则引导黑屏 |
-| boot-args | -rad24 | 开启后绿屏死机得到明显缓解 |
+| boot-args | -rad24 | 开启后绿屏死机得到明显缓解 helps avoid green screen crash |
 | PlatformInfo->Generic  |  |  |
 | SystemProductName | iMac19,1 | 适合5700xt+8代CPU |
 | UEFI->AFPS | | |
-| MinDate | 0 | 解决引导卡死  |
-| MinVersion | 0 | 解决引导卡死 |
+| MinDate | 0 | 解决引导卡死 solves booting stallssolves booting stalls |
+| MinVersion | 0 | 解决引导卡死 solves booting stalls |
 | UEFI->Quirks  |  |  |
-| EnableVectorAcceleration | True | 解决开机引导卡死 |
-| ReleaseUsbOwnership | True | 解决安装重启卡死 |
+| EnableVectorAcceleration | True | 解决开机引导卡死 solves booting stalls |
+| ReleaseUsbOwnership | True | 解决安装重启卡死 solves rebooting stalls |
 | ResizeGpuBars | -1  | 开着不好使，关了反正好使 |
-| UnblockFsConnect | False |  解决安装重启卡死 |
+| UnblockFsConnect | False |  解决安装重启卡死 solves rebooting stalls |
 
-### 重要提示与故障问题解答
+### 重要提示与故障问题解答 Key hints and QA
 - 强烈推荐，强烈推荐买一个单独的SSD，装一个windows，128G足够了，二手价格在36元左右，一个硬独立双系统windows几乎能帮你解决所有遇到的问题。可以说如果没有这份单独的128G+win11，我是无法在华硕z370m-plusII上安装配置成功的。
 - 新手安装黑苹果时，一定会需要依赖黑苹果主机硬件信息，比如映射USB，调整CPU供电，调整显卡型号参数，调试核显，根据主板内的SSDT来解决bug等等，所以在黑苹果机上装一个windows，上述操作将变得非常非常轻松。
 - 5700XT连屏幕，遭遇了显示器绿屏，全屏绿，崩溃死机
@@ -169,3 +169,8 @@ Chinese and English introductions are provided below:
 
 # How to use: Readme!
 ### TODO
+
+
+
+# Appendix
+- 下载各个版本的 MacOS downloads：https://support.apple.com/zh-cn/102662
