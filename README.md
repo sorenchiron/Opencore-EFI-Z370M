@@ -10,15 +10,15 @@ The total worth of this hackintosh is ￥2876 ($398 USD)
 
 | Part | Model | Details |
 | ----- | ----- | ----- | 
-| 主板 Motherboard | 华硕 Asus Z370M Plus II | USED |
-| CPU | Intel 8600K | OEM USED |
+| 主板 Motherboard | [华硕 Asus Z370M Plus II](https://www.asus.com.cn/motherboards-components/motherboards/prime/prime-z370m-plus-ii/techspec/) | USED |
+| CPU | [Intel 8600K](https://www.intel.cn/content/www/cn/zh/products/sku/126685/intel-core-i58600k-processor-9m-cache-up-to-4-30-ghz/specifications.html) | OEM USED |
 | iGPU | Intel UHD 630 | Integrated |
-| GPU | AMD RX 5700XT Sapphire Nitro+ | 超白金OC USED |
+| GPU | [AMD RX 5700XT Sapphire Nitro+](https://www.sapphiretech.com/en/consumer/nitro-radeon-rx-5700-xt-8g-gddr6hao) | [超白金OC](https://www.sapphiretech.com/zh-cn/consumer/nitro-rx-5700xt-8g-g6-oc_c) USED |
 | RAM | 丁凌存储 3200MHz DDR4 32G | 海力士Hynix颗粒 |
 | SSD | WD SN550 HBM 1T | Old controller |
 | SSD | GUDGA 128G | for Win11 USED |
 | 电源 Power | 玄武550 | Rated 600W |
-| 网卡 NetAdapter | BCM94360CD | USED |
+| 网卡 NetAdapter | [BCM94360CD](https://cn.fenvi.com/product_detail_27.html) | USED |
 
 Chinese and English introductions are provided below:
 
