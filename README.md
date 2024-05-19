@@ -21,6 +21,14 @@ The total worth of this hackintosh is ￥2876 ($398 USD)
 | 电源 Power | 玄武550 | Rated 600W |
 | 网卡 NetAdapter | [BCM94360CD](https://cn.fenvi.com/product_detail_27.html) | USED |
 
+# 文件说明 Files and folders
+| File | Comments | 
+| --- | --- |
+| EFI-installer | 安装盘所用 for USB-sitck Installer |
+| EFI-UHD-working | 仅集显专用 for iGPU-only system |
+| EFI-hless-r24-ag5500xt-ss5700-RTC-acpi-wake | 双显可用 iGPU+dGPU |
+
+
 Chinese and English introductions are provided below:
 
 # 中文文档 Readme
