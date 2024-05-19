@@ -113,18 +113,18 @@ Chinese and English introductions are provided below:
 | Key | Value | Details |
 | --- | --- | --- |
 | Booter-Quirks |  |  |
-| DevirtualiseMmio | False | AsusZ370m必须 否则[卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
-| EnableWriteUnprotector | True | AsusZ370m必须 否则[卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
+| DevirtualiseMmio | False | 解决AsusZ370m[卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
+| EnableWriteUnprotector | True | 解决AsusZ370m[卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
 | ProtectUefiServices | False | Z370 不需要  |
-| SetupVirtualMap | True | AsusZ370m必须 否则[卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
-| SyncRuntimePermissions False | AsusZ370m必须 否则[卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
+| SetupVirtualMap | True | 解决AsusZ370m[卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
+| SyncRuntimePermissions False | 解决AsusZ370m[卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
 | DeviceProperties-Add |  |  |
 | PciRoot(0x0)/Pci(0x14,0x0) | acpi-wake-type=01 | 辅助睡眠秒醒，无效 |
 | PciRoot(0x0)/Pci(0x1b,0x0) | layout-id=01000000 | [I219V](https://www.asus.com.cn/motherboards-components/motherboards/prime/prime-z370m-plus-ii/techspec/)支持layout-1 |
 | PciRoot(0x0)/Pci(0x2,0x0) | AAPL,ig-platform-id=0300913E | iGPU仅计算 |
 | Kernel-Quirks |  |  |
-| AppleCpuPmCfgLock | True | [卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
-| AppleXcpmCfgLock | True | [卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
+| AppleCpuPmCfgLock | True | 解决AsusZ370m[卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
+| AppleXcpmCfgLock | True | 解决AsusZ370m[卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
 | DisableIoMapper | True | 确保vt-d不影响 |
 | DisableRtcChecksum | True | 辅助开机safe mode问题 有效 |
 | XhciPortLimit | True | 解决引导中途停止问题 |
