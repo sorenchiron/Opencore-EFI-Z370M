@@ -112,30 +112,34 @@ Chinese and English introductions are provided below:
 ### config.plist 详细说明
 | Key | Value | Details |
 | --- | --- | --- |
-| Booter-Quirks |  |  |
+| Booter->Quirks |  |  |
 | DevirtualiseMmio | False | 解决AsusZ370m[卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
 | EnableWriteUnprotector | True | 解决AsusZ370m[卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
 | ProtectUefiServices | False | Z370 不需要  |
 | SetupVirtualMap | True | 解决AsusZ370m[卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
 | SyncRuntimePermissions False | 解决AsusZ370m[卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
-| DeviceProperties-Add |  |  |
+| DeviceProperties->Add |  |  |
 | PciRoot(0x0)/Pci(0x14,0x0) | acpi-wake-type=01 | 辅助睡眠秒醒，无效 |
 | PciRoot(0x0)/Pci(0x1b,0x0) | layout-id=01000000 | [I219V](https://www.asus.com.cn/motherboards-components/motherboards/prime/prime-z370m-plus-ii/techspec/)支持layout-1 |
 | PciRoot(0x0)/Pci(0x2,0x0) | AAPL,ig-platform-id=0300913E | iGPU仅计算 |
-| Kernel-Quirks |  |  |
+| Kernel->Quirks |  |  |
 | AppleCpuPmCfgLock | True | 解决AsusZ370m[卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
 | AppleXcpmCfgLock | True | 解决AsusZ370m[卡EB黑屏](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html#stuck-on-eb-log-exitbs-start) |
 | DisableIoMapper | True | 确保vt-d不影响 |
 | DisableRtcChecksum | True | 辅助开机safe mode问题 有效 |
 | XhciPortLimit | True | 解决引导中途停止问题 |
-| NVRAM 7C436110-AB2A-4BBB-A880-FE41995C9F82 |  |  |
-| boot-args | -v keepsyms=1 debug=0x100 agdpmod=pikera -rad24 |  |
-| PlatformInfo-Generic  |  |  |
+| NVRAM->7C436110-AB2A-4BBB-A880-FE41995C9F82 |  |  |
+| boot-args | -v | 详细log |
+| boot-args | keepsyms=1 | 详细log |
+| boot-args | debug=0x100 | 详细log |
+| boot-args | agdpmod=pikera | 5700XT必须，否则引导黑屏 |
+| boot-args | -rad24 | 开启后绿屏死机得到明显缓解 |
+| PlatformInfo->Generic  |  |  |
 | SystemProductName | iMac19,1 | 适合5700xt+8代CPU |
-| UEFI-AFPS | | |
+| UEFI->AFPS | | |
 | MinDate | 0 | 解决引导卡死  |
 | MinVersion | 0 | 解决引导卡死 |
-| UEFI-Quirks  |  |  |
+| UEFI->Quirks  |  |  |
 | EnableVectorAcceleration | True | 解决开机引导卡死 |
 | ReleaseUsbOwnership | True | 解决安装重启卡死 |
 | ResizeGpuBars | -1  | 开着不好使，关了反正好使 |
