@@ -27,7 +27,9 @@ The total worth of this hackintosh is ￥2876 ($398 USD)
 | EFI-installer | 安装盘所用 for USB-sitck Installer |
 | EFI-UHD-working | 仅集显专用 for iGPU-only system |
 | EFI-hless-r24-ag5500xt-ss5700-RTC-acpi-wake | 双显可用 iGPU+dGPU |
-
+| Tools/VDADecoderChecker | Mac下检测硬件加速工作状态。Opencore上的那一份不好使，段错误，这个是其他渠道下载的，实测可用 |
+| Tools/gfxutil | Mac下检测图形设备PCIE路径信息`gfxutil -f GFX0` |
+| Tools/forbit-sleep.sh | 关闭所有自动休眠睡眠，仅锁屏后熄灭屏幕 |
 
 Chinese and English introductions are provided below:
 
