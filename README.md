@@ -6,7 +6,6 @@
 ![华硕z370m主板接口图](imgs/z370m-plus-ii-plugs.jpg)
 
 # 硬件 Hardware Specification
-
 The total worth of this hackintosh is ￥2876 ($398 USD)
 
 | Part | Model | Details |
@@ -168,6 +167,9 @@ Chinese and English introductions are provided below:
         1. AMD驱动问题，可以下载老版本驱动，或者进AMD官网-网吧专区，下载网吧驱动，有网友报告问题解决。
         1. HDMI线材与协议问题，AMD显卡对HDMI兼容缺陷是一个已知问题，AMD官方今年与HDMI协商共建开源驱动，疑似是为了解决HDMI兼容问题，但遭到HDMI方面拒绝。
         1. 显卡显存虚焊，或显卡核心虚焊，寄修费用预估200~300。
+    - 如果仅在macos下出现各类故障：
+        1. 使用Catalina 10.15.1-19B88，可稳定适配5700XT，EFI与教程请见[OC-EFI-Z370M-5700XT-Catalina](https://github.com/sorenchiron/Opencore-EFI-Z370M-5700XT-Catalina)
+        2. 更换RX580显卡，目前8G版二手售价约为240元。
 
 # How to use: Readme!
 ### How to solve GPU problems: Collection of AMD RX 5xxx XT problems & solutions
