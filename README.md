@@ -86,6 +86,7 @@ Chinese and English introductions are provided below:
 - 关于主板USB口
     - 使用`USBToolBox.kext`,`UTBMap.kext`映射端口
     - 如果你插的主板口不是我提到的`U31G1_34`和`USB1314`，则应该自行下载 `USBToolBox` 的程序工具，重新映射端口，并生成你自己的 `UTBMap.kext`，替换本仓库EFI中的 `UTBMap.kext`。
+    - 调整USB修正睡眠：根据 @a461168837 的经验，需使用Hackintool把网卡使用的主板USB端口设置成内置设备internal，才能完美睡眠。感谢 @a461168837。
 
 ### 关于AMD 5700XT显卡的特别说明
 - AMD RX 5000全系和部分6000系列显卡被报告有大量原厂故障缺陷 [1](https://forums.tomshardware.com/threads/rx-5700xt-green-screen-bad-gpu.3533926/) [2](https://community.amd.com/t5/drivers-software/rx-5700xt-green-screen-crashes/td-p/142073) [3](https://community.amd.com/t5/drivers-software/rx-5700xt-green-screen-crashes/td-p/142073) [4](https://forums.tomshardware.com/threads/5700xt-green-screen-crash.3669085/) [5](https://www.bilibili.com/read/cv15226963/) [6](https://tieba.baidu.com/p/7208773691) [7](https://www.rednn.com/digital/202004/19383.html) [8](https://blog.csdn.net/RellyChodorow/article/details/133490387) [9](https://tieba.baidu.com/p/8641758085)
