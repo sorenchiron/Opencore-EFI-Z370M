@@ -25,7 +25,8 @@ The total worth of this hackintosh is ￥2876 ($398 USD)
 | --- | --- |
 | EFI-installer | 安装盘所用 for USB-sitck Installer |
 | EFI-UHD-working | 仅集显专用 for iGPU-only system |
-| EFI-hless-r24-ag5500xt-ss5700-RTC-acpi-wake | 双显可用 iGPU+dGPU |
+| EFI-hless-r24-ag5500xt-ss5700-RTC-acpi-wake | iGPU加速+dGPU显示 |
+| EFI-UHD-ssdt5700xt-RTC-acpi-wake | 双显可用 iGPU+dGPU  |
 | Tools/VDADecoderChecker | Mac下检测硬件加速工作状态。Opencore上的那一份不好使，段错误，这个是其他渠道下载的，实测可用 |
 | Tools/gfxutil | Mac下检测图形设备PCIE路径信息`gfxutil -f GFX0` |
 | Tools/forbit-sleep.sh | 关闭所有自动休眠睡眠，仅锁屏后熄灭屏幕 |
@@ -44,7 +45,7 @@ Chinese and English introductions are provided below:
 ### 如果没有dGPU，仅有CPU iGPU核显UHD630
 - 安装好后，可以使用`EFI-UHD-working`代替系统EFI，注意文件夹应重命名为`EFI`再使用。
 - 实测24小时工作无故障。
-- UHD630可以带动4k屏，如果想要4K60FPS，需要主板的HDMI/DP接口支持。主要瓶颈是主板接口规格。
+- UHD630可以带动4k屏，如果想要4K60FPS，需要主板的HDMI/DP接口支持，主要瓶颈是主板接口规格。
 
 ### 目前的体验 Current performance
 - [x] Apple ID 登录正常
@@ -157,7 +158,7 @@ Chinese and English introductions are provided below:
 | UnblockFsConnect | False |  解决安装重启卡死 solves rebooting stalls |
 
 ### 重要提示与故障问题解答 Key hints and QA
-- 强烈推荐，强烈推荐买一个单独的SSD，装一个windows，128G足够了，二手价格在36元左右，一个硬独立双系统windows几乎能帮你解决所有遇到的问题。可以说如果没有这份单独的128G+win11，我是无法在华硕z370m-plusII上安装配置成功的。
+- 强烈推荐买一个单独的SSD，装一个windows，128G足够了，二手价格在36元左右，一个硬独立双系统windows几乎能帮你解决所有遇到的问题。可以说如果没有这份单独的128G+win11，我是无法在华硕z370m-plusII上安装配置成功的。
 - 新手安装黑苹果时，一定会需要依赖黑苹果主机硬件信息，比如映射USB，调整CPU供电，调整显卡型号参数，调试核显，根据主板内的SSDT来解决bug等等，所以在黑苹果机上装一个windows，上述操作将变得非常非常轻松。
 - 5700XT连屏幕，遭遇了显示器绿屏，全屏绿，崩溃死机
     - 我遇到了，解决了，全部方法分享如下：
@@ -167,10 +168,14 @@ Chinese and English introductions are provided below:
     - 如果显卡在windows下也绿屏或花屏崩溃
         1. AMD驱动问题，可以下载老版本驱动，或者进AMD官网-网吧专区，下载网吧驱动，有网友报告问题解决。
         1. HDMI线材与协议问题，AMD显卡对HDMI兼容缺陷是一个已知问题，AMD官方今年与HDMI协商共建开源驱动，疑似是为了解决HDMI兼容问题，但遭到HDMI方面拒绝。
-        1. 显卡显存虚焊，或显卡核心虚焊，寄修费用预估200~300。
+        1. 显卡显存虚焊，或显卡核心虚焊，寄修费用预估200~300，我修的显卡供电部分电路，实际开销275元含运费。
     - 如果仅在macos下出现各类故障：
-        1. 使用Catalina 10.15.1-19B88，可稳定适配5700XT，EFI与教程请见[OC-EFI-Z370M-5700XT-Catalina](https://github.com/sorenchiron/Opencore-EFI-Z370M-5700XT-Catalina)
+        1. 使用Catalina 10.15.1-19B88，能更加稳定地适配5700XT，EFI与教程请见[OC-EFI-Z370M-5700XT-Catalina](https://github.com/sorenchiron/Opencore-EFI-Z370M-5700XT-Catalina)
         2. 更换RX580显卡，目前8G版二手售价约为240元。
+- 安装过程中“准备载入更新时出错”
+    - 安装盘换到主板USB口，或换成USB2.0的慢速口，实测有效。
+- 固态硬盘碎片优化
+    - macos系统可手动启用Trim，需要命令行，具体百度搜索即可。
 
 # How to use: Readme!
 ### How to solve GPU problems: Collection of AMD RX 5xxx XT problems & solutions
